@@ -145,3 +145,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+# Custom
+/designDocuments/functionDesignDocument/*.pdf
