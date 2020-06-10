@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2020 年 5 月 25 日 05:49
+-- 生成日時: 2020 年 6 月 10 日 12:22
 -- サーバのバージョン： 10.3.15-MariaDB
 -- PHP のバージョン: 7.3.6
 
@@ -83,7 +83,7 @@ CREATE TABLE `product` (
   `price` int(16) NOT NULL,
   `image` blob DEFAULT NULL,
   `product_explanation` varchar(400) NOT NULL,
-  `status` tinyint(1) NOT NULL,
+  `is_sold` tinyint(1) NOT NULL DEFAULT 0,
   `admin_mail` varchar(30) NOT NULL,
   `genre_code` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
