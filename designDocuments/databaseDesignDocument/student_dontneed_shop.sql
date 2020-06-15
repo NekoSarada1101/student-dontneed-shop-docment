@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2020 年 6 月 10 日 12:22
+-- 生成日時: 2020 年 6 月 15 日 04:18
 -- サーバのバージョン： 10.3.15-MariaDB
 -- PHP のバージョン: 7.3.6
 
@@ -31,7 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `admin_mail` varchar(30) NOT NULL,
   `admin_name` varchar(20) NOT NULL,
-  `admin_password` varchar(128) NOT NULL
+  `admin_password` varchar(128) NOT NULL,
+  `postal_code` int(7) NOT NULL,
+  `address` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -66,9 +68,13 @@ CREATE TABLE `member` (
   `member_mail` varchar(30) NOT NULL,
   `member_name` varchar(20) NOT NULL,
   `member_password` varchar(128) NOT NULL,
-  `credit_card` int(16) NOT NULL,
+  `postal_code` int(7) NOT NULL,
   `address` varchar(50) NOT NULL,
-  `postal_code` int(7) NOT NULL
+  `tell` int(11) NOT NULL,
+  `credit_card` int(16) NOT NULL,
+  `expiration_date` date NOT NULL,
+  `security_code` int(3) NOT NULL,
+  `holder` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -96,7 +102,7 @@ CREATE TABLE `product` (
 
 CREATE TABLE `purchase_details` (
   `purchase_id` int(11) NOT NULL,
-  `member_mail` varchar(30) NOT NULL,
+  `member_mail` varchar(30) DEFAULT NULL,
   `product_id` int(11) NOT NULL,
   `purchase_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
